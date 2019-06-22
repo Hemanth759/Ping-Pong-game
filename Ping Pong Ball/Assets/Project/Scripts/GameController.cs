@@ -17,6 +17,12 @@ public class GameController : MonoBehaviour
     public Transform player1;
     public Transform player2;
 
+
+
+    // private varables
+    static private int player1Score{get; set;}
+    static private int player2Score{get; set;}
+
     // Update is called once per frame
     void Start()
     {
@@ -40,5 +46,23 @@ public class GameController : MonoBehaviour
         // set the position of the players
         player1.position = new Vector2(cam.ScreenToWorldPoint(new Vector3(75f, 0f, 0f)).x, 0f);
         player2.position = new Vector2(cam.ScreenToWorldPoint(new Vector3(Screen.width - 75f, 0f, 0f)).x, 0f);
+
+        // initializing the scores
+        player1Score = 0;
+        player2Score = 0;
+    }
+
+    public static void addScoreTo(string name)
+    {
+        if(name == "Left Wall")
+        {
+            player2Score += 1;
+        }
+        else 
+        {
+            player1Score += 1;
+        }
+        Debug.Log("player 1 Score: " + player1Score);
+        Debug.Log("player 2 Score: " + player2Score);
     }
 }
