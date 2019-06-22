@@ -23,8 +23,7 @@ public class PlayerController : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D> ();
         if (moveMentSpeed == 0) 
             moveMentSpeed = 10f;
-        vector.x = 0f;
-        vector.y = moveMentSpeed;
+        vector = new Vector2(0f, moveMentSpeed);
     }
 
     // Update is called once per frame
