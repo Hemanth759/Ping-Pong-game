@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7374539707148014800}
   - component: {fileID: 7374539707148014801}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!114 &7374539707148014801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,4 +143,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upKey: 119
   downKey: 115
-  moveMentSpeed: 10
+  moveMentSpeed: 20
