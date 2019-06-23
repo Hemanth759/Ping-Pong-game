@@ -7,6 +7,18 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        Invoke("goBall", 2f);
+    }
+
+    void resetBall() 
+    {
+        this.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+        this.GetComponent<Rigidbody2D>().position = new Vector2(0f, 0f);
+        Invoke("goBall", 0.5f);
+    }
+
+    void goBall() 
+    {
         float choice = Random.Range(0f, 1f);
         this.GetComponent<Rigidbody2D>().AddForce(new Vector2(choice <= 0.5 ? 40f : -40f, 50f));
     }
@@ -36,5 +48,6 @@ public class Ball : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         GameController.addScoreTo(other.name);
+        resetBall();
     }
 }
