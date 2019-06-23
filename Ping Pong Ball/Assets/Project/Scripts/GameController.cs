@@ -52,6 +52,17 @@ public class GameController : MonoBehaviour
         player2Score = 0;
     }
 
+    /// <summary>
+    /// OnGUI is called for rendering and handling GUI events.
+    /// This function can be called multiple times per frame (one call per event).
+    /// </summary>
+    void OnGUI()
+    {
+        // GUI.skin = this.skin;
+        GUI.Label(new Rect(Screen.width / 2 - 150, 20, 100, 100), "player 1: " + player1Score);
+        GUI.Label(new Rect(Screen.width / 2 + 150, 20, 100, 100), "player 2: " + player2Score);
+    }
+
     public static void addScoreTo(string name)
     {
         if(name == "Left Wall")
