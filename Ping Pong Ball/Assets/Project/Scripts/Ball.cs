@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -37,6 +40,7 @@ public class Ball : MonoBehaviour
                                                             -this.GetComponent<Rigidbody2D>().velocity.x,
                                                             (other.collider.GetComponent<Rigidbody2D>().velocity.y / 2) + 
                                                             (this.GetComponent<Rigidbody2D>().velocity.y /3));
+            audioSource.Play();
         }
     }
 
