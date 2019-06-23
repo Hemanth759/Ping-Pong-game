@@ -523,6 +523,7 @@ MonoBehaviour:
   rightWall: {fileID: 1892949998}
   player1: {fileID: 2007006236}
   player2: {fileID: 7374539707148014803}
+  skin: {fileID: 11400000, guid: 31a08a9c16685c04abc09d2a4f98ba1f, type: 2}
 --- !u!4 &1230031418
 Transform:
   m_ObjectHideFlags: 0

@@ -17,7 +17,8 @@ public class GameController : MonoBehaviour
     public Transform player1;
     public Transform player2;
 
-
+    [Header("Skins: ")]
+    public GUISkin skin;
 
     // private varables
     static private int player1Score{get; set;}
@@ -58,9 +59,9 @@ public class GameController : MonoBehaviour
     /// </summary>
     void OnGUI()
     {
-        // GUI.skin = this.skin;
-        GUI.Label(new Rect(Screen.width / 2 - 150, 20, 100, 100), "player 1: " + player1Score);
-        GUI.Label(new Rect(Screen.width / 2 + 150, 20, 100, 100), "player 2: " + player2Score);
+        GUI.skin = this.skin;
+        GUI.Label(new Rect(Screen.width / 2 - 175, 20, 200, 200), "player 1: " + player1Score);
+        GUI.Label(new Rect(Screen.width / 2 + 175, 20, 200, 200), "player 2: " + player2Score);
     }
 
     public static void addScoreTo(string name)
