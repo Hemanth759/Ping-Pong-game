@@ -37,9 +37,10 @@ public class Ball : MonoBehaviour
         {
             // script for the movement as per the distance of the contact
             this.GetComponent<Rigidbody2D>().velocity = new Vector2(
-                                                            -this.GetComponent<Rigidbody2D>().velocity.x,
+                                                            this.GetComponent<Rigidbody2D>().velocity.x,
                                                             (other.collider.GetComponent<Rigidbody2D>().velocity.y / 2) + 
                                                             (this.GetComponent<Rigidbody2D>().velocity.y /3));
+            audioSource.pitch = Random.Range(0.8f, 1.2f);
             audioSource.Play();
         }
     }
