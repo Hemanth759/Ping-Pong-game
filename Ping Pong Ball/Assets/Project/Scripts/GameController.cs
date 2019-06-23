@@ -70,7 +70,7 @@ public class GameController : MonoBehaviour
         {
             player2Score += 1;
         }
-        else 
+        else if(name == "Right Wall")
         {
             player1Score += 1;
         }

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-
+    [Header("Audio: ")]
     public AudioSource audioSource;
+    public AudioClip click;
+    public AudioClip bonus;
 
     // Start is called before the first frame update
     private void Start()
@@ -41,6 +43,7 @@ public class Ball : MonoBehaviour
                                                             (other.collider.GetComponent<Rigidbody2D>().velocity.y / 2) + 
                                                             (this.GetComponent<Rigidbody2D>().velocity.y /3));
             audioSource.pitch = Random.Range(0.8f, 1.2f);
+            audioSource.clip = this.click;
             audioSource.Play();
         }
     }
@@ -53,6 +56,12 @@ public class Ball : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         GameController.addScoreTo(other.name);
+        if(other.tag == "outOfBoundWalls")
+        {
+            audioSource.clip = bonus;
+            audioSource.pitch = 1f;
+            audioSource.Play();
+        }
         resetBall();
     }
 }
