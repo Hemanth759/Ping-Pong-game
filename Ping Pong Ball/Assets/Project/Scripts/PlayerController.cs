@@ -4,18 +4,41 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // intializing private varaibles
     [Header("Input keys")]
-    public KeyCode upKey;
-    public KeyCode downKey;
+    [SerializeField]
+    private KeyCode _upKey;
+    [SerializeField]
+    private KeyCode _downKey;
     
 
     [Space]
     [Header("Varaibles:")]
-    public float moveMentSpeed;
+    [SerializeField]
+    private float _moveMentSpeed;
 
-
+    // not serialized varialbles
     private Rigidbody2D rb;
     private Vector2 vector;
+
+
+    // public variables for getters and setters
+    public KeyCode upKey
+    {
+        get { return this._upKey; }
+    }
+
+    public KeyCode downKey
+    {
+        get { return this._downKey; }
+    }
+
+    public float moveMentSpeed
+    {
+        get { return this._moveMentSpeed; }
+        internal set { this._moveMentSpeed = value; }
+    }
+
 
     // Start is called before the first frame update
     void Start()
