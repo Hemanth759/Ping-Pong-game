@@ -7,7 +7,9 @@ public class Ball : MonoBehaviour
     [Header("Audio: ")]
     [SerializeField]
     private AudioSource _audioSource;
+    [SerializeField]
     private AudioClip _click;
+    [SerializeField]
     private AudioClip _bonus;
 
     public AudioSource audioSource
