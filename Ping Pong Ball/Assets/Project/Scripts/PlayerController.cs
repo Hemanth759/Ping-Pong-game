@@ -44,8 +44,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D> ();
-        if (moveMentSpeed == 0) 
+        if (moveMentSpeed <= 0) 
+        {
             moveMentSpeed = 10f;
+        }
         vector = new Vector2(0f, moveMentSpeed);
     }
 
@@ -54,12 +56,10 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKey(upKey)) 
         {
-            // Debug.Log("going up!!");
             rb.velocity = vector;
         } 
         else if(Input.GetKey(downKey))
         {
-            // Debug.Log("going down!!");
             rb.velocity = -vector;
         }
         else
