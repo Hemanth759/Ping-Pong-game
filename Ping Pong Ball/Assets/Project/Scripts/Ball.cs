@@ -25,6 +25,17 @@ public class Ball : MonoBehaviour
         get { return this._bonus; }
     }
 
+    // some private varaibles
+    private GameController gameController;
+
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    void Awake()
+    {
+        this.gameController = GameObject.FindObjectOfType<GameController>();
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -71,7 +82,7 @@ public class Ball : MonoBehaviour
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerEnter2D(Collider2D other)
     {
-        GameController.addScoreTo(other.name);
+        gameController.addScoreTo(other.name);
         if(other.tag == "outOfBoundWalls")
         {
             audioSource.clip = bonus;

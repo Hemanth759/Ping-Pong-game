@@ -29,6 +29,10 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private GUISkin _skin;
 
+    [Header("Some Constants")]
+    [SerializeField]
+    private int _maxScore;
+
 
     // getters and setters for the rivate varailbles
     public Camera cam
@@ -69,6 +73,11 @@ public class GameController : MonoBehaviour
     public GUISkin skin
     {
         get { return this._skin; }
+    }
+
+    public int maxScore
+    {
+        get { return this._maxScore; }
     }
 
     // private varables
@@ -115,15 +124,25 @@ public class GameController : MonoBehaviour
         GUI.Label(new Rect(Screen.width / 2 + 175, 20, 200, 200), "player 2: " + player2Score);
     }
 
-    public static void addScoreTo(string name)
+    public void addScoreTo(string name)
     {
         if(name == "Left Wall")
         {
             player2Score += 1;
+            if(player2Score >= this.maxScore)
+            {
+                Debug.Log("entering title screen");
+                ShowGameOver.showWintitle(2);
+            }
         }
         else if(name == "Right Wall")
         {
             player1Score += 1;
+            if(player1Score >= this.maxScore)
+            {
+                Debug.Log("entering title screen");
+                ShowGameOver.showWintitle(1);
+            }
         }
         Debug.Log("player 1 Score: " + player1Score);
         Debug.Log("player 2 Score: " + player2Score);
