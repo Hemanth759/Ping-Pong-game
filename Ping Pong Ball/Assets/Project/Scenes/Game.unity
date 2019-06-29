@@ -517,14 +517,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb64706dc08fb674c81b444a96e6da85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420031}
-  topWall: {fileID: 624915945}
-  bottomWall: {fileID: 452514580}
-  leftWall: {fileID: 547032907}
-  rightWall: {fileID: 1892949998}
-  player1: {fileID: 2007006236}
-  player2: {fileID: 7374539707148014803}
-  skin: {fileID: 11400000, guid: 31a08a9c16685c04abc09d2a4f98ba1f, type: 2}
+  _cam: {fileID: 519420031}
+  _topWall: {fileID: 624915945}
+  _bottomWall: {fileID: 452514580}
+  _leftWall: {fileID: 547032907}
+  _rightWall: {fileID: 1892949998}
+  _player1: {fileID: 2007006236}
+  _player2: {fileID: 7374539707148014803}
+  _skin: {fileID: 11400000, guid: 31a08a9c16685c04abc09d2a4f98ba1f, type: 2}
 --- !u!4 &1230031418
 Transform:
   m_ObjectHideFlags: 0

@@ -4,21 +4,72 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    // inittailzinf private varaibles
     [Header("Camera: ")]
-    public Camera cam;
+    [SerializeField]
+    private Camera _cam;
 
     [Header("Walls: ")]
-    public BoxCollider2D topWall;
-    public BoxCollider2D bottomWall;
-    public BoxCollider2D leftWall;
-    public BoxCollider2D rightWall;
+    [SerializeField]
+    private BoxCollider2D _topWall;
+    [SerializeField]
+    private BoxCollider2D _bottomWall;
+    [SerializeField]
+    private BoxCollider2D _leftWall;
+    [SerializeField]
+    private BoxCollider2D _rightWall;
     
     [Header("Players: ")]
-    public Transform player1;
-    public Transform player2;
+    [SerializeField]
+    private Transform _player1;
+    [SerializeField]
+    private Transform _player2;
 
     [Header("Skins: ")]
-    public GUISkin skin;
+    [SerializeField]
+    private GUISkin _skin;
+
+
+    // getters and setters for the rivate varailbles
+    public Camera cam
+    {
+        get { return this._cam; }
+    }
+
+    public BoxCollider2D topWall
+    {
+        get { return this._topWall; }
+    }
+
+    public BoxCollider2D bottomWall
+    {
+        get { return this._bottomWall; }
+    }
+
+    public BoxCollider2D leftWall
+    {
+        get { return this._leftWall; }
+    }
+
+    public BoxCollider2D rightWall
+    {
+        get { return this._rightWall; }
+    }
+
+    public Transform player1
+    {
+        get { return this._player1; }
+    }
+
+    public Transform player2
+    {
+        get { return this._player2; }
+    }
+
+    public GUISkin skin
+    {
+        get { return this._skin; }
+    }
 
     // private varables
     static private int player1Score{get; set;}

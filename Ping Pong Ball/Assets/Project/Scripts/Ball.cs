@@ -15,17 +15,14 @@ public class Ball : MonoBehaviour
     public AudioSource audioSource
     {
         get { return this._audioSource; }
-        set { this._audioSource = value; }
     }
     public AudioClip click
     {
         get { return this._click; }
-        set { this._click = value; }
     }
     public AudioClip bonus
     {
         get { return this._bonus; }
-        set { this._bonus = value; }
     }
 
     // Start is called before the first frame update
