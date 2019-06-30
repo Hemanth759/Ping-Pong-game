@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShowGameOver : MonoBehaviour
 {
@@ -30,7 +31,9 @@ public class ShowGameOver : MonoBehaviour
 
 
         // display the title screen
-        this.windScoreUI.SetActive(true);    
+        this.windScoreUI.SetActive(true);
+        Text text = this.windScoreUI.GetComponentInChildren<Text>();
+        text.text = "Player "+ playerNumber.ToString();
 
         Debug.Log(gameManager);
         Debug.Log(ball);
