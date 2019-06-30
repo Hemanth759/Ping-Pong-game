@@ -87,7 +87,7 @@ public class Ball : MonoBehaviour
         {
             audioSource.clip = bonus;
             audioSource.pitch = 1f;
-            audioSource.Play();
+            // audioSource.Play();
         }
         resetBall();
     }

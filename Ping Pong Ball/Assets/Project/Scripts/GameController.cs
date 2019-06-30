@@ -81,8 +81,17 @@ public class GameController : MonoBehaviour
     }
 
     // private varables
-    static private int player1Score{get; set;}
-    static private int player2Score{get; set;}
+    static private int player1Score { get; set; }
+    static private int player2Score { get; set; }
+    static private ShowGameOver showGameOverUI { get; set; }
+
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    void Awake()
+    {
+        showGameOverUI = this.GetComponent<ShowGameOver> ();
+    }
 
     // Update is called once per frame
     void Start()
@@ -132,7 +141,7 @@ public class GameController : MonoBehaviour
             if(player2Score >= this.maxScore)
             {
                 Debug.Log("entering title screen");
-                ShowGameOver.showWintitle(2);
+                showGameOverUI.showWintitle(2);
             }
         }
         else if(name == "Right Wall")
@@ -140,8 +149,7 @@ public class GameController : MonoBehaviour
             player1Score += 1;
             if(player1Score >= this.maxScore)
             {
-                Debug.Log("entering title screen");
-                ShowGameOver.showWintitle(1);
+                showGameOverUI.showWintitle(1);
             }
         }
         Debug.Log("player 1 Score: " + player1Score);
